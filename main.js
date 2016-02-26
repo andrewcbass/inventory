@@ -80,7 +80,15 @@ function groupSum() {
   // invTot = $( "#inventory" ).first().data( "price" );
   // console.log('Inventory: ', invTot);
 
+var cl1TotArr = $('#client1').find('.cost').each(function(i, val) {
+      cl1Stor.push(Number(this.innerHTML));
+  })
+  
+  cl1Stor = arrStorInv.reduce(function(a, b) {
+    return a + b;
+  })
 
+  console.log(cl1Stor);
 
 
 }
