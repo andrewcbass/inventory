@@ -22,9 +22,10 @@ input {
 #inventory {
   border: 2px solid #000;
   width: 800px;
-  height: 200px;
+  min-height: 200px;
   margin-bottom: 10px;
   margin-left: 25px;
+  margin-right: 500px;
 
 }
 .holder {

@@ -28,7 +28,6 @@ function createInv(cost, name) {
   $cost.text(cost);
   $new.append($cost);
   $('#inventory').append($new);
-
 }
 
 function clickInv(event) {
@@ -49,18 +48,32 @@ function clickHolder() {
     $('.selected').appendTo($(this));
     $('.selected').removeClass('selected'); 
   }
+  groupSum();
 }
 
 function groupSum() {
   console.log('groupSum');
   var invTot = 0;
+  var arrStorInv = [0];
+  
   var cl1Tot = 0;
-  var cl2Tot = 0;
-  var cl3Tot = 0;
-  var cl4Tot = 0;
+  var cl1Stor = [0];
 
-  invTot = $('.cost').each(function(i, val) {
-    return ($('.cost').eq(i).text());
+  var cl2Tot = 0;
+  var cl2Stor = [0];
+
+  var cl3Tot = 0;
+  var cl3Stor = [0];
+
+  var cl4Tot = 0;
+  var cl4Stor = [0];
+
+  var invTotArr = $('#inventory').find('.cost').each(function(i, val) {
+      arrStorInv.push(Number(this.innerHTML));
+  })
+  
+  invTot = arrStorInv.reduce(function(a, b) {
+    return a + b;
   })
 
   console.log(invTot);
